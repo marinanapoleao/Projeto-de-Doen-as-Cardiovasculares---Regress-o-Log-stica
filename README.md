@@ -2,6 +2,12 @@
 
 Construir um modelo que ajude a prever doenças cardiovasculares. O objetivo é utilizar esses dados históricos dos pacientes e construir um bom modelo de regressão capaz de indicar se novos pacientes estão propensos a doenças cardiovasculares ou não.
 
+• Utilização de banco de dados dos pacientes para construir um bom modelo de regressão capaz de indicar se novos pacientes estão propensos a doenças cardiovasculares ou não.
+
+• Construção e avaliação de modelos estatísticos e de machine learning.
+
+• Aplicação de regressão logística, testes de hipóteses e intervalos de confiança.
+
 ### 𓂃🖊 Apresentação Storytelling: <https://canva.link/87fscfp0uj4oeos>
 
 
