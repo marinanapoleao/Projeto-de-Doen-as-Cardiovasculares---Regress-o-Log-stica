@@ -1,5 +1,8 @@
 # Projeto de Doenças Cardiovasculares - Regressão Logística
 
+<img width="1408" height="768" alt="Gemini_Generated_Image_agt62dagt62dagt6" src="https://github.com/user-attachments/assets/dc7ab70f-e661-435d-bab6-65441a7cc30d" />
+
+
 ## 📌 Sobre o Projeto
 
 O projeto utiliza técnicas de Ciência de Dados e Machine Learning para desenvolver um modelo de classificação capaz de estimar se um paciente apresenta doença cardiovascular a partir de características demográficas, medidas corporais e indicadores relacionados à saúde e aos hábitos de vida.
