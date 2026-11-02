@@ -39,7 +39,7 @@ As variáveis incluem:
   
 - Presença ou ausência de doença cardiovascular (cardio_disease), codificada como 1 ou 0.
 
-O notebook não identifica a instituição ou o endereço original de publicação do dataset; portanto, essa origem não pode ser confirmada a partir do arquivo.
+
 
 ## 🛠️ LINGUAGENS E BIBLIOTECAS
 
@@ -57,35 +57,53 @@ O notebook não identifica a instituição ou o endereço original de publicaç�
 
 ## 🔍 Metodologia
 
-➜ 1. Carregamento e tratamento dos dados
+#### *1. Carregamento e tratamento dos dados*
 - Leitura do arquivo CSV e inspeção das variáveis.
 - Conversão da coluna weight de texto para valores numéricos, com substituição da vírgula decimal e arredondamento para números inteiros.
 - Verificação de valores ausentes: nenhum foi identificado.
 - Análise estatística descritiva e inspeção das distribuições das variáveis.
 
-➜ 2. Análise exploratória de dados (EDA)
+#### *2. Análise exploratória de dados (EDA)*
 - Análise da distribuição de doença cardiovascular por gênero, prática de atividade física e tabagismo.
 - Comparação das médias de idade e peso entre pacientes com e sem a condição registrada.
 - Construção de matriz de correlação para investigar relações entre as variáveis.
 
-➜ 3. Preparação dos dados
+#### *3. Preparação dos dados*
 - Separação das variáveis explicativas (X) e da variável-alvo (Y).
 - Divisão dos dados em 80% para treinamento e 20% para teste, utilizando random_state=42.
 - Padronização das variáveis com StandardScaler, ajustado somente nos dados de treinamento.
 - Aplicação do SMOTE para balancear as classes da base de treinamento, que passou a conter 8.064 registros, distribuídos igualmente entre as duas classes.
 
-➜ 4. Construção do modelo
+#### *4. Construção do modelo*
 - Treinamento de um modelo de Regressão Logística.
 - Análise dos coeficientes para investigar a contribuição das variáveis na classificação.
 - Ajuste de hiperparâmetros com GridSearchCV, validação cruzada de cinco partições e otimização pela acurácia.
 
-➜ 5. Avaliação e simulação de previsões
+#### *5. Avaliação e simulação de previsões*
 - Avaliação com matriz de confusão, acurácia, precisão, recall e F1-score.
 - Cálculo da curva ROC e da métrica AUC.
 - Criação de uma função para simular a previsão de um novo paciente e retornar a probabilidade estimada pelo modelo.
 
 ## 📈  Resultados e Métricas
 
+Os resultados abaixo correspondem ao primeiro modelo de Regressão Logística, avaliado na base de teste com 2.000 registros.
+
+Acurácia ——————————— 65,85%
+
+AUC registrada  ———————— 0,66
+
+
+*Métricas por classe base de teste*
+
+Métrica ——————————— Sem doença (0) ————— Com doença (1)
+
+Precisão ————————————— 0,65 ————————— 0,67
+
+Recall —————————————— 0,70 —————————	0,61
+
+F1-score —————————————	0,67 —————————	0,64
+
+Registros avaliados ————————	1.001 —————————	999
 
 ## 💡Principais Insights e Implicações
 
@@ -93,19 +111,19 @@ Principais variáveis associadas à doença cardiovascular
 
 A análise de correlação identificou as seguintes relações positivas com a variável-alvo:
 
-Variável	------ 	Correlação com a variável-alvo
+Variável	————————	Correlação com a variável-alvo
 
-Idade	------ 0,237
+Idade	—————————————— 0,237
 
-Colesterol	------ 	0,221
+Colesterol	———————————— 	0,221
 
-Peso	------ 	0,183
+Peso	—————————————— 	0,183
 
-Glicose	------ 	0,082
+Glicose	————————————— 	0,082
 
 Os valores indicam associações lineares positivas, de intensidade relativamente baixa. Isso sugere que essas variáveis, isoladamente, não explicam toda a ocorrência da condição na base analisada.
 
-➜  Insights da análise exploratória
+####  *Insights da análise exploratória*
 
 - A idade média foi de aproximadamente 54,9 anos entre os registros com doença cardiovascular, contra 51,7 anos entre os registros sem a condição.
 
@@ -116,7 +134,7 @@ Os valores indicam associações lineares positivas, de intensidade relativament
 - Os gráficos de gênero e tabagismo sugeriram diferenças nas contagens entre os grupos, mas essas observações não demonstram, por si só, causalidade ou risco individual.
 
 
-➜  Implicações para o negócio
+####  *Implicações para o negócio*
 
 - A análise pode ajudar a identificar variáveis que merecem investigação adicional em estudos de saúde.
   
